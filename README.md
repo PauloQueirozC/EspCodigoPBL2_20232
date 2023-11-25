@@ -1,15 +1,215 @@
-# dht11
-Working version of the DHT11 library for Arduino
+# ESP Para o segundo problema do PBL de Sistemas Digitais
+<p>
+  Código da ESP segue o protocolo descrito abaixo. Ela fica no aguardo por uma solicitação de dois Bytes contendo o endereço e o número requisição e retorna uma resposta de 2 Bytes seguindo as tabelas a baixo.
+</p>
+<h1>Tabela de solicitação da orangePi</h1>
+<table>
+  
+  <tr>
+    <td>
+      <b>Ação</b>
+    </td>
+    <td>
+      <b>Primeiro Envio</b>
+    </td>
+    <td>
+      <b>Segundo Envio</b>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Solicita a situação atual do sensor
+    </td>
+    <td>
+      0x01
+    </td>
+    <td>
+      Endereço
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Solicita a medida da temperatura atual
+    </td>
+    <td>
+      0x02
+    </td>
+    <td>
+      Endereço
+    </td>
+  </tr>
 
-I published this one since there a lots of various versions of the DHT11 library 
-for Arduino floating around but most of them do not work with the current version of Arduino IDE.
+  <tr>
+    <td>
+      SSolicita a medida da humidade atual
+    </td>
+    <td>
+      0x03
+    </td>
+    <td>
+      Endereço
+    </td>
+  </tr>
 
-This version of the library is used in this tutorial:
+  <tr>
+    <td>
+      Ativa sensoriamento contínuo da temperatura
+    </td>
+    <td>
+      0x04
+    </td>
+    <td>
+      Endereço
+    </td>
+  </tr>
 
-http://www.makerblog.at/2014/08/dht11-sensor-fuer-temperatur-und-luftfeuchtigkeit-am-arduino/ 
+  <tr>
+    <td>
+      Ativa sensoriamento contínuo da umidade
+    </td>
+    <td>
+      0x04
+    </td>
+    <td>
+      Endereço
+    </td>
+  </tr>
 
-and here:
+  <tr>
+    <td>
+      Desativa sensoriamento contínuo da temperatura
+    </td>
+    <td>
+      0x05
+    </td>
+    <td>
+      Endereço
+    </td>
+  </tr>
 
-https://www.youtube.com/watch?v=iTF6__w7AJ8
+  <tr>
+    <td>
+      Desativa sensoriamento contínuo da umidade
+    </td>
+    <td>
+      0x06
+    </td>
+    <td>
+      Endereço
+    </td>
+  </tr>
+</table>
 
-(German only, sorry)
+<h1>Tabela de resposta da ESP</h1>
+
+<table>
+  <tr>
+    <td>
+      <b>Resposta</b>
+    </td>
+    <td>
+      <b>Primeiro Envio</b>
+    </td>
+    <td>
+      <b>Segundo Envio</b>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Sensor com problema
+    </td>
+    <td>
+      0x1F
+    </td>
+    <td>
+      Endereço
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Sensor inesistente
+    </td>
+    <td>
+      0x2F
+    </td>
+    <td>
+      Endereço
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Requesição inesistente
+    </td>
+    <td>
+      0x3F
+    </td>
+    <td>
+      Endereço
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Sensor funcionando normalmente
+    </td>
+    <td>
+      0x07
+    </td>
+    <td>
+      Endereço
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Medida de umidade
+    </td>
+    <td>
+      Umidade (%)
+    </td>
+    <td>
+      0x08
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Medida de temperatura
+    </td>
+    <td>
+      Temperatura (ºC)
+    </td>
+    <td>
+      0x09
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Confirmação de desativação de sensoriamento contínuo de temperatura
+    </td>
+    <td>
+      Temperatura (ºC)
+    </td>
+    <td>
+      0x0A
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Confirmação de desativação de sensoriamento contínuo de umidade
+    </td>
+    <td>
+      Umidade (%)
+    </td>
+    <td>
+      0x0B
+    </td>
+  </tr>
+</table>
