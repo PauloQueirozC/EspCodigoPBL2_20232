@@ -40,8 +40,8 @@ void setTempMensage(){
 }
 
 /* 
- * Define como resposta o valor em int da humidade no
- * primero Byte e o codigo de resposta da humidade no 
+ * Define como resposta o valor em int da umidade no
+ * primero Byte e o codigo de resposta da umidade no 
  * segundo Byte
  */
 void setHumidMensage(){
@@ -61,7 +61,7 @@ void setEndSensingTemp(char sensingAddress){
 
 /* 
  * Define como resposta o codigo de confirmação do  
- * encerramento do sensoriamento continuo da humidade 
+ * encerramento do sensoriamento continuo da umidade 
  * no primeiro Byte e o endereço do sensor no segundo Byte
  */
 void setEndSensingHumid(char sensingAddress){
@@ -89,7 +89,7 @@ void sendTemp(int pinDHT11){
 }
 
 /*
- * Ler o valor da humidade do sensor DHT11 e solicitar
+ * Ler o valor da umidade do sensor DHT11 e solicitar
  * o envio
  */
 void sendHumid(int pinDHT11){
@@ -116,7 +116,7 @@ void continuousSensingTemp(int pinDHT11){
 }
 
 /* 
- * Inicia o sensoriamento continuo da humidade
+ * Inicia o sensoriamento continuo da umidade
  */
 void continuousSensingHumid(int pinDHT11){
   char addressSensing = address;
@@ -166,7 +166,7 @@ void loop() {
           case 0x01:
             sendTemp(DHT11PIN);
           break;
-          // Valor da humidade
+          // Valor da umidade
           case 0x02:
             sendHumid(DHT11PIN);
           break;
@@ -174,7 +174,7 @@ void loop() {
           case 0x03:
             continuousSensingTemp(DHT11PIN);
           break;
-          // Inicio do sensoriamento continuo da humidade
+          // Inicio do sensoriamento continuo da umidade
           case 0x04:
             continuousSensingHumid(DHT11PIN);
           break;
@@ -183,7 +183,7 @@ void loop() {
             setEndSensingTemp(address);
             sendByts();
           break;
-          // Fim do sensoriamento continuo da humidade
+          // Fim do sensoriamento continuo da umidade
           case 0x06:
             setEndSensingHumid(address);
             sendByts();
