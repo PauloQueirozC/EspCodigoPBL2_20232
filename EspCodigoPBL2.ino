@@ -149,7 +149,7 @@ void loop() {
     receivingData();
     // Verifica qual endereço do sensor foi solicitado e se ele existe
     switch (address) {
-      case 0x00:
+      case 0x0F:
         // Verifica qual foi a requisição e se ela existe
         switch (request){
           // Sensor funcionando
