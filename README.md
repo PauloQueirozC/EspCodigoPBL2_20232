@@ -1,6 +1,6 @@
 # ESP Para o segundo problema do PBL de Sistemas Digitais
 <p>
-  Código da ESP segue o protocolo descrito abaixo. Ela fica no aguardo por uma solicitação de dois Bytes contendo o endereço e o número requisição e retorna uma resposta de 2 Bytes seguindo as tabelas a baixo.
+  Código da ESP segue o protocolo descrito abaixo. Ela fica no aguardo por uma solicitação de dois Bytes contendo o número da requisição desejada e o endereço do sensor, que no caso o único sensor inserido e um sensor DHT11 no endereço 0x00, e retorna uma resposta de 2 Bytes seguindo as tabelas a baixo.
 </p>
 <h1>Tabela de solicitação da orangePi</h1>
 <table>
