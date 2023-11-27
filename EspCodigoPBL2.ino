@@ -12,7 +12,7 @@ char address = 0;
 char answer[2] = {2,2};
 
 /* 
- * Ler dois Bytes do pino Serial sendo o primeiro a requesição
+ * Ler dois Bytes do pino Serial sendo o primeiro a requisição
  * e o segundo o endereço do sensor 
  */
 void receivingData(){
@@ -21,7 +21,7 @@ void receivingData(){
 }
 
 /* 
- * Define como resposta uma mesagem de erro no primero Byte e 
+ * Define como resposta uma mensagem de erro no primeiro Byte e 
  * o endereço do sensor no segundo Byte
  */
 void setErroMensage(){
@@ -31,7 +31,7 @@ void setErroMensage(){
 
 /* 
  * Define como resposta o valor em int da temperatura no
- * primero Byte e o codigo de resposta da temperatura no 
+ * primeiro Byte e o código de resposta da temperatura no 
  * segundo Byte
  */
 void setTempMensage(){
@@ -41,7 +41,7 @@ void setTempMensage(){
 
 /* 
  * Define como resposta o valor em int da umidade no
- * primero Byte e o codigo de resposta da umidade no 
+ * primeiro Byte e o código de resposta da umidade no 
  * segundo Byte
  */
 void setHumidMensage(){
@@ -50,7 +50,7 @@ void setHumidMensage(){
 }
 
 /* 
- * Define como resposta o codigo de confirmação do  
+ * Define como resposta o código de confirmação do  
  * encerramento do sensoriamento continuo da temperatura 
  * no primeiro Byte e o endereço do sensor no segundo Byte
  */
@@ -60,7 +60,7 @@ void setEndSensingTemp(char sensingAddress){
 }
 
 /* 
- * Define como resposta o codigo de confirmação do  
+ * Define como resposta o código de confirmação do  
  * encerramento do sensoriamento continuo da umidade 
  * no primeiro Byte e o endereço do sensor no segundo Byte
  */
@@ -133,7 +133,7 @@ void continuousSensingHumid(int pinDHT11){
 
 
 /*
- * Define a comunição serial para a frequencia 
+ * Define a comunicação serial para a frequência 
  * de 9600Hz
  */
 void setup() {
@@ -150,7 +150,7 @@ void loop() {
     // Verifica qual endereço do sensor foi solicitado e se ele existe
     switch (address) {
       case 0x00:
-        // Verifica qual foi a requesição e se ela existe
+        // Verifica qual foi a requisição e se ela existe
         switch (request){
           // Sensor funcionando
           case 0x00:
@@ -188,7 +188,7 @@ void loop() {
             setEndSensingHumid(address);
             sendByts();
           break;
-          // Requesição não existente
+          // Requisição não existente
           default:
           {
             answer[0] = 0x3F;
@@ -207,5 +207,3 @@ void loop() {
     delay(3000);
   }
 }
-
-
