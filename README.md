@@ -43,7 +43,7 @@
 
   <tr>
     <td>
-      SSolicita a medida da humidade atual
+      Solicita a medida da umidade atual
     </td>
     <td>
       0x03
@@ -131,7 +131,7 @@
 
   <tr>
     <td>
-      Sensor inesistente
+      Sensor inexistente
     </td>
     <td>
       0x2F
@@ -143,7 +143,7 @@
 
   <tr>
     <td>
-      Requesição inesistente
+      Requisição inexistente
     </td>
     <td>
       0x3F
