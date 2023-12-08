@@ -22,7 +22,7 @@
       Solicita a situação atual do sensor
     </td>
     <td>
-      0x01
+      0x00
     </td>
     <td>
       Endereço
@@ -34,7 +34,7 @@
       Solicita a medida da temperatura atual
     </td>
     <td>
-      0x02
+      0x01
     </td>
     <td>
       Endereço
@@ -46,7 +46,7 @@
       Solicita a medida da umidade atual
     </td>
     <td>
-      0x03
+      0x02
     </td>
     <td>
       Endereço
@@ -58,7 +58,7 @@
       Ativa sensoriamento contínuo da temperatura
     </td>
     <td>
-      0x04
+      0x03
     </td>
     <td>
       Endereço
